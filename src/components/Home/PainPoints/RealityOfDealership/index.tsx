@@ -5,7 +5,7 @@ import { GoogleReviews, SadEmojiFace, StockDown } from "@/components/ui/icons";
 
 import dotGrid from "@/public/images/pain-points/dot-grid.png";
 
-export const RealityOfLeadership = () => {
+export const RealityOfDealership = () => {
   return (
     <div className="relative">
       {/* bg grid dots */}

@@ -5,7 +5,7 @@ import { Rocket } from "@/components/ui/icons";
 
 import videoPlaceholder from "@/public/images/pain-points/video-placeholder.png";
 
-import { RealityOfLeadership } from "./RealityOfDealership";
+import { RealityOfDealership } from "./RealityOfDealership";
 
 const PainPoints = () => {
   return (
@@ -37,7 +37,7 @@ const PainPoints = () => {
         </div>
       </div>
 
-      <RealityOfLeadership />
+      <RealityOfDealership />
     </section>
   );
 };
