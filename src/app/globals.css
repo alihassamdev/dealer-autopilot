@@ -142,3 +142,15 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+.bg-darkgradient {
+  background-image: linear-gradient(180deg, #053556 14.9%, #02131e 100%);
+}
+
+.img-overlay-gradient {
+  background: linear-gradient(
+    0deg,
+    rgba(5, 53, 86, 0.8) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
