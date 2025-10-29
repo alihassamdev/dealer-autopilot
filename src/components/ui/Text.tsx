@@ -17,7 +17,7 @@ const Text: React.FC<TextPropTypes> = (props) => {
       <h1
         id={id}
         className={twMerge(
-          " text-charcoal tracking-[-0.8%] text-[40px] leading-12  md:tracking-[-1.2%] md:text-[64px] md:leading-[70px] font-bold",
+          " text-charcoal-grey tracking-[-0.8%] text-[40px] leading-12  md:tracking-[-1.2%] md:text-[64px] md:leading-[70px] font-bold",
           className
         )}
       >
@@ -31,7 +31,7 @@ const Text: React.FC<TextPropTypes> = (props) => {
       <h2
         id={id}
         className={twMerge(
-          "text-charcoal  text-[28px] leading-9  md:text-[40px] md:leading-12 font-semibold",
+          "text-charcoal-grey  text-[28px] leading-9  md:text-[40px] md:leading-12 font-semibold",
           className
         )}
       >
@@ -45,7 +45,7 @@ const Text: React.FC<TextPropTypes> = (props) => {
       <h3
         id={id}
         className={twMerge(
-          "text-charcoal  text-[22px] leading-[30px]  md:text-[28px] md:leading-9 font-semibold",
+          "text-charcoal-grey  text-[22px] leading-[30px]  md:text-[28px] md:leading-9 font-semibold",
           className
         )}
       >
@@ -59,7 +59,7 @@ const Text: React.FC<TextPropTypes> = (props) => {
       <h4
         id={id}
         className={twMerge(
-          "text-charcoal text-[18px] leading-[26px]  md:text-[22px] md:leading-[30px] font-medium",
+          "text-charcoal-grey text-[18px] leading-[26px]  md:text-[22px] md:leading-[30px] font-medium",
           className
         )}
       >
@@ -71,7 +71,7 @@ const Text: React.FC<TextPropTypes> = (props) => {
   return (
     <p
       className={twMerge(
-        "text-charcoal tracking-[0.2%] text-[14px] leading-[26px] md:text-[16px] md:leading-[26px] font-normal",
+        "text-charcoal-grey tracking-[0.2%] text-[14px] leading-[26px] md:text-[16px] md:leading-[26px] font-normal",
         className
       )}
       onClick={onClick}

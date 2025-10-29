@@ -8,6 +8,7 @@
   --primary: oklch(31.79% 0.076 245.21);
   --secondary: oklch(58.28% 0.154 47.64);
   --charcoal-grey: oklch(20.46% 0 0);
+  --off-white: oklch(94.31% 0 0);
   --background: oklch(100% 0 0);
 }
 
@@ -18,7 +19,8 @@
   /* Brand colors */
   --color-primary: var(--primary);
   --color-secondary: var(--secondary);
-  --color-charcoal: var(--charcoal-grey);
+  --color-charcoal-grey: var(--charcoal-grey);
+  --color-off-white: var(--off-white);
 
   /* Fonts */
   --font-sans: var(--font-montserrat);
@@ -27,6 +29,6 @@
 
 body {
   background: var(--background);
-  color: var(--charcoal-grey);
+  color: var(--color-charcoal-grey);
   font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
 }
