@@ -22,7 +22,7 @@ const Hero = () => {
         </div>
 
         {/* Call to Action */}
-        <Button className="w-[198px] h-[36px] md:w-[224px] md:h-[42px] shadow-[0px_5px_50px_-12px_#05355680]">
+        <Button className="w-[198px] h-[36px] md:w-[224px] md:h-[42px] shadow-[0px_5px_50px_-12px_#053556]">
           Real-Time Automotive AI
         </Button>
       </div>
