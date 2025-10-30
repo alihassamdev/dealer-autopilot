@@ -21,7 +21,7 @@ const AnimatedText: React.FC<AnimatedTextProps> = ({
   text,
   colorRanges,
   direction = "top",
-  delay = 0.2,
+  delay = 0.15,
   className = "",
 }) => {
   const words = text.split(" ");

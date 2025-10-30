@@ -3,6 +3,9 @@ import { Montserrat } from "next/font/google";
 import "./globals.css";
 
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import AOSProvider from "@/providers/AOSProvider";
+// import SmoothScrollSection from "@/providers/SmoothScrollSection";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -26,8 +29,13 @@ export default function RootLayout({
       <body
         className={`${montserrat.variable} antialiased relative flex min-h-screen flex-col `}
       >
-        <Navbar />
-        <main className="flex-1">{children}</main>
+        <AOSProvider>
+          {/* <SmoothScrollSection> */}
+          <Navbar />
+          <main className="flex-1">{children}</main>
+          <Footer />
+          {/* </SmoothScrollSection> */}
+        </AOSProvider>
       </body>
     </html>
   );
