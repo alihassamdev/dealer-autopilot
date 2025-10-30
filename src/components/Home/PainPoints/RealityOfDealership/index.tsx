@@ -1,9 +1,15 @@
+"use client";
+
 import Image from "next/image";
 
 import Text from "@/components/ui/Text";
 import { GoogleReviews, SadEmojiFace, StockDown } from "@/components/ui/icons";
 
+import ScrollFillText from "@/components/ui/ScrollFillText";
+
 import dotGrid from "@/public/images/pain-points/dot-grid.png";
+import borderDesktop from "@/public/images/pain-points/border-image-desktop.png";
+import borderMobile from "@/public/images/pain-points/border-image-mobile.png";
 
 export const RealityOfDealership = () => {
   return (
@@ -21,7 +27,7 @@ export const RealityOfDealership = () => {
       <div className="relative px-6 pt-[138px] md:pt-[110px]">
         <div className="max-w-[1240px] mx-auto flex flex-col items-center">
           {/* caption / pill */}
-          <div className="mb-20 md:mb-[50px] bg-primary flex w-[287px] h-14 md:w-[318px] md:h-[62px] gap-2.5 px-10 py-5 items-center justify-center rounded-[12px] tracking-[0.3%] text-[12px] leading-4 md:text-[14px] md:leading-[22px] text-off-white transition-opacity font-bold">
+          <div className="shadow-md mb-20 md:mb-[50px] bg-primary flex w-[287px] h-14 md:w-[318px] md:h-[62px] gap-2.5 px-10 py-5 items-center justify-center rounded-[12px] tracking-[0.3%] text-[12px] leading-4 md:text-[14px] md:leading-[22px] text-off-white transition-opacity font-bold shadow-[0px_5px_50px_-12px_#053556]">
             <div className="shrink-0 w-2.5 h-2.5 rounded-full bg-secondary" />
             The Reality Of The Dealership
           </div>
@@ -40,12 +46,29 @@ export const RealityOfDealership = () => {
           <div className="mb-[50px] md:mb-[100px]">
             <div className="flex flex-wrap flex-col md:flex-row justify-center gap-[25px]">
               {/* Card 1 */}
-              <div className="w-full md:w-[396px] h-auto md:h-[200px] relative border border-secondary pt-5 pb-[15px] px-[27px] md:pt-2.5 md:px-5 ">
-                <div className="flex flex-col md:flex-row gap-2.5 items-center  md:items-start">
+              <div className="w-full md:w-[396px] h-auto md:h-[200px] relative flex flex-col md:flex-row gap-2.5 items-center md:items-start justify-center text-center md:text-left p-5 md:px-6 md:py-4">
+                {/* Background Image for Desktop */}
+                <Image
+                  src={borderDesktop}
+                  alt="border frame"
+                  fill
+                  className="hidden md:block object-fill pointer-events-none select-none z-0"
+                />
+
+                {/* Background Image for Mobile */}
+                <Image
+                  src={borderMobile}
+                  alt="border frame mobile"
+                  fill
+                  className="block md:hidden object-fill pointer-events-none select-none z-0"
+                />
+
+                {/* Card Content */}
+                <div className="relative z-10 flex flex-col md:flex-row gap-2.5 items-center md:items-start">
                   <div>
                     <StockDown />
                   </div>
-                  <div className="mx-auto text-center md:text-left w-full md:max-w-[283px]">
+                  <div className="mx-auto md:mx-0 w-full md:max-w-[283px]">
                     <Text
                       as="h4"
                       className="text-secondary font-semibold mb-2.5 text-[18px] leading-[26px]"
@@ -60,9 +83,26 @@ export const RealityOfDealership = () => {
                   </div>
                 </div>
               </div>
+
               {/* Card 2 */}
-              <div className="w-full md:w-[396px] h-auto md:h-[200px] relative border border-secondary pt-5 pb-[15px] px-[27px] md:pt-2.5 md:px-5 ">
-                <div className="flex flex-col md:flex-row gap-2.5 items-center  md:items-start">
+              <div className="w-full md:w-[396px] h-auto md:h-[200px] relative pt-5 pb-[15px] px-[27px] md:pt-2.5 md:px-5 ">
+                {/* Background Image for Desktop */}
+                <Image
+                  src={borderDesktop}
+                  alt="border frame"
+                  fill
+                  className="hidden md:block object-fill pointer-events-none select-none z-0"
+                />
+
+                {/* Background Image for Mobile */}
+                <Image
+                  src={borderMobile}
+                  alt="border frame mobile"
+                  fill
+                  className="block md:hidden object-fill pointer-events-none select-none z-0"
+                />
+
+                <div className="relative z-10 flex flex-col md:flex-row gap-2.5 items-center  md:items-start">
                   <div>
                     <GoogleReviews />
                   </div>
@@ -80,9 +120,26 @@ export const RealityOfDealership = () => {
                   </div>
                 </div>
               </div>
+
               {/* Card 3 */}
-              <div className="w-full md:w-[396px] h-auto md:h-[200px] relative border border-secondary pt-5 pb-[15px] px-[27px] md:pt-2.5 md:px-5 ">
-                <div className="flex flex-col md:flex-row gap-2.5 items-center  md:items-start">
+              <div className="w-full md:w-[396px] h-auto md:h-[200px] relative pt-5 pb-[15px] px-[27px] md:pt-2.5 md:px-5 ">
+                {/* Background Image for Desktop */}
+                <Image
+                  src={borderDesktop}
+                  alt="border frame"
+                  fill
+                  className="hidden md:block object-fill pointer-events-none select-none z-0"
+                />
+
+                {/* Background Image for Mobile */}
+                <Image
+                  src={borderMobile}
+                  alt="border frame mobile"
+                  fill
+                  className="block md:hidden object-fill pointer-events-none select-none z-0"
+                />
+
+                <div className="relative z-10 flex flex-col md:flex-row gap-2.5 items-center  md:items-start">
                   <div>
                     <SadEmojiFace />
                   </div>
@@ -108,12 +165,13 @@ export const RealityOfDealership = () => {
             <Text as="h3" className="text-secondary">
               Dealer AutoPilot
               <br />
-              <span className="text-off-white">
+              {/* <span className="text-off-white">
                 helps you track, recover, and convert every opportunity
                 <br />
                 —before it’s too late
-              </span>
+              </span> */}
             </Text>
+            <ScrollFillText />
           </div>
         </div>
       </div>
