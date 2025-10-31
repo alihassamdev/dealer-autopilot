@@ -1,9 +1,13 @@
 "use client";
 
+import { useEffect, useRef } from "react";
 import Image from "next/image";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import Text from "@/components/ui/Text";
 import { GoogleReviews, SadEmojiFace, StockDown } from "@/components/ui/icons";
+import AOS from "aos";
 
 import ScrollFillText from "@/components/ui/ScrollFillText";
 
@@ -12,9 +16,198 @@ import borderDesktop from "@/public/images/pain-points/border-image-desktop.png"
 import borderMobile from "@/public/images/pain-points/border-image-mobile.png";
 import BadgeButton from "@/components/ui/BadgeButton";
 
+gsap.registerPlugin(ScrollTrigger);
+
 export const RealityOfDealership = () => {
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const cardsContainerRef = useRef<HTMLDivElement>(null);
+  const scrollFillTextRef = useRef<HTMLHeadingElement>(null);
+  const textContainerRef = useRef<HTMLDivElement>(null);
+  const card1Ref = useRef<HTMLDivElement>(null);
+  const card2Ref = useRef<HTMLDivElement>(null);
+  const card3Ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const section = sectionRef.current;
+    const cardsContainer = cardsContainerRef.current;
+    const scrollFillText = scrollFillTextRef.current;
+    const textContainer = textContainerRef.current;
+
+    if (!section || !cardsContainer || !scrollFillText || !textContainer)
+      return;
+
+    // Check if mobile (viewport width < 768px)
+    const isMobile = window.innerWidth < 768;
+
+    // Desktop: GSAP scroll animations
+    if (!isMobile) {
+      // Phase 2: Text animation - starts when text enters viewport, animates until it reaches center
+      // Initially disabled, will be enabled after cards animation completes
+      const textTimeline = gsap.timeline({
+        scrollTrigger: {
+          trigger: scrollFillText,
+          start: "bottom bottom", // Start when text enters viewport
+          end: "center center", // End when text reaches center
+          scrub: 1,
+          invalidateOnRefresh: true,
+        },
+      });
+
+      // Animate text fill from 0% to 100%
+      textTimeline.fromTo(
+        scrollFillText,
+        {
+          "--fill": "0%",
+        },
+        {
+          "--fill": "100%",
+          ease: "none",
+        }
+      );
+
+      // Get the ScrollTrigger instance and disable it initially
+      const textScrollTrigger = textTimeline.scrollTrigger;
+      if (textScrollTrigger) {
+        textScrollTrigger.disable();
+      }
+
+      // Phase 1: Animate cards while pinned
+      const cardsTimeline = gsap.timeline({
+        scrollTrigger: {
+          trigger: section,
+          start: "top top",
+          end: "+=150%", // Scroll distance for cards animation
+          pin: true,
+          scrub: 1,
+          anticipatePin: 1,
+          onLeave: () => {
+            // Cards animation complete and user scrolled past, enable text animation
+            if (textScrollTrigger) {
+              textScrollTrigger.enable();
+              textScrollTrigger.refresh();
+            }
+          },
+        },
+      });
+
+      // Animate the container (all cards together) from right to center
+      cardsTimeline.fromTo(
+        cardsContainer,
+        {
+          x: "100vw",
+          opacity: 0,
+        },
+        {
+          x: 0,
+          opacity: 1,
+          duration: 1,
+          ease: "power2.out",
+          immediateRender: false,
+        }
+      );
+
+      // Also enable text animation when cards timeline completes
+      cardsTimeline.eventCallback("onComplete", () => {
+        if (textScrollTrigger) {
+          textScrollTrigger.enable();
+          textScrollTrigger.refresh();
+        }
+      });
+
+      return () => {
+        ScrollTrigger.getAll().forEach((trigger) => {
+          if (
+            trigger.vars.trigger === section ||
+            trigger.vars.trigger === scrollFillText
+          ) {
+            trigger.kill();
+          }
+        });
+        cardsTimeline.kill();
+        textTimeline.kill();
+      };
+    } else {
+      // Mobile: AOS handles card animations, setup ScrollFillText animation
+      // Text animates from when it enters viewport until it reaches center
+      const textTimeline = gsap.timeline({
+        scrollTrigger: {
+          trigger: scrollFillText,
+          start: "bottom bottom", // Start when text enters viewport
+          end: "center center", // End when text reaches center
+          scrub: 1,
+          invalidateOnRefresh: true,
+        },
+      });
+
+      // Animate text fill from 0% to 100%
+      textTimeline.fromTo(
+        scrollFillText,
+        {
+          "--fill": "0%",
+        },
+        {
+          "--fill": "100%",
+          ease: "none",
+        }
+      );
+
+      return () => {
+        ScrollTrigger.getAll().forEach((trigger) => {
+          if (trigger.vars.trigger === scrollFillText) {
+            trigger.kill();
+          }
+        });
+        textTimeline.kill();
+      };
+    }
+  }, []);
+
+  // Conditionally add/remove AOS attributes based on screen size
+  useEffect(() => {
+    const handleResize = () => {
+      const isMobile = window.innerWidth < 768;
+
+      if (card1Ref.current && card2Ref.current && card3Ref.current) {
+        if (isMobile) {
+          // Add AOS attributes on mobile
+          card1Ref.current.setAttribute("data-aos", "fade-right");
+          card1Ref.current.setAttribute("data-aos-duration", "800");
+          card2Ref.current.setAttribute("data-aos", "fade-left");
+          card2Ref.current.setAttribute("data-aos-duration", "800");
+          card2Ref.current.setAttribute("data-aos-delay", "100");
+          card3Ref.current.setAttribute("data-aos", "fade-right");
+          card3Ref.current.setAttribute("data-aos-duration", "800");
+          card3Ref.current.setAttribute("data-aos-delay", "200");
+        } else {
+          // Remove AOS attributes on desktop
+          card1Ref.current.removeAttribute("data-aos");
+          card1Ref.current.removeAttribute("data-aos-duration");
+          card2Ref.current.removeAttribute("data-aos");
+          card2Ref.current.removeAttribute("data-aos-duration");
+          card2Ref.current.removeAttribute("data-aos-delay");
+          card3Ref.current.removeAttribute("data-aos");
+          card3Ref.current.removeAttribute("data-aos-duration");
+          card3Ref.current.removeAttribute("data-aos-delay");
+        }
+
+        // Refresh AOS to apply changes
+        AOS.refresh();
+      }
+    };
+
+    // Set initial state
+    handleResize();
+
+    // Listen for resize events
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   return (
-    <div className="relative">
+    <div className="relative overflow-x-hidden" ref={sectionRef}>
       {/* bg grid dots */}
       <div className="absolute h-[204px] inset-x-0 top-[-18px] md:top-0 z-0 ">
         <Image
@@ -43,9 +236,15 @@ export const RealityOfDealership = () => {
           </div>
 
           <div className="mb-[50px] md:mb-[100px]">
-            <div className="flex flex-wrap flex-col md:flex-row justify-center gap-[25px]">
+            <div
+              ref={cardsContainerRef}
+              className="md:flex flex-wrap flex-col md:flex-row justify-center gap-[25px]"
+            >
               {/* Card 1 */}
-              <div className="w-full md:w-[396px] h-auto md:h-[200px] relative flex flex-col md:flex-row gap-2.5 items-center md:items-start justify-center text-center md:text-left p-5 md:px-6 md:py-4">
+              <div
+                ref={card1Ref}
+                className="w-full md:w-[396px] h-auto md:h-[200px] relative flex flex-col md:flex-row gap-2.5 items-center md:items-start justify-center text-center md:text-left p-5 md:px-6 md:py-4"
+              >
                 {/* Background Image for Desktop */}
                 <Image
                   src={borderDesktop}
@@ -84,7 +283,10 @@ export const RealityOfDealership = () => {
               </div>
 
               {/* Card 2 */}
-              <div className="w-full md:w-[396px] h-auto md:h-[200px] relative pt-5 pb-[15px] px-[27px] md:pt-2.5 md:px-5 ">
+              <div
+                ref={card2Ref}
+                className="w-full md:w-[396px] h-auto md:h-[200px] relative pt-5 pb-[15px] px-[27px] md:pt-2.5 md:px-5 "
+              >
                 {/* Background Image for Desktop */}
                 <Image
                   src={borderDesktop}
@@ -121,7 +323,10 @@ export const RealityOfDealership = () => {
               </div>
 
               {/* Card 3 */}
-              <div className="w-full md:w-[396px] h-auto md:h-[200px] relative pt-5 pb-[15px] px-[27px] md:pt-2.5 md:px-5 ">
+              <div
+                ref={card3Ref}
+                className="w-full md:w-[396px] h-auto md:h-[200px] relative pt-5 pb-[15px] px-[27px] md:pt-2.5 md:px-5 "
+              >
                 {/* Background Image for Desktop */}
                 <Image
                   src={borderDesktop}
@@ -160,17 +365,17 @@ export const RealityOfDealership = () => {
             </div>
           </div>
 
-          <div className="text-center ">
+          <div className="text-center " ref={textContainerRef}>
             <Text as="h3" className="text-secondary">
               Dealer AutoPilot
               <br />
               {/* <span className="text-off-white">
                 helps you track, recover, and convert every opportunity
                 <br />
-                —before it’s too late
+                —before it's too late
               </span> */}
             </Text>
-            <ScrollFillText />
+            <ScrollFillText ref={scrollFillTextRef} autoPlay={false} />
           </div>
         </div>
       </div>
