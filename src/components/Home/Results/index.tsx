@@ -1,6 +1,7 @@
 import Text from "@/ui/Text";
 import { Currency, DisplayBoard, StarIcon, Users } from "@/ui/icons";
 import CountUp from "@/ui/CountUp";
+import BadgeButton from "@/components/ui/BadgeButton";
 
 const Results = () => {
   const ResultsData = [
@@ -46,11 +47,9 @@ const Results = () => {
   return (
     <section className="pb-[60px]  md:pb-[125px] px-6 ">
       <div className="w-full max-w-[1240px] mx-auto relative flex flex-col items-center ">
-        {/* caption / pill */}
-        <div className="mb-[87px] md:mb-[50px] bg-primary hover:bg-primary cursor-pointer flex w-[211px] h-[62px]  gap-[10px] px-[40px] py-[20px] items-center justify-center rounded-[12px] tracking-[0.3%] text-[12px] leading-[16px] md:text-[14px] md:leading-[22px] text-off-white transition-opacity font-bold shadow-[0px_5px_50px_-12px_#053556]">
-          <div className="shrink-0 w-[10px] h-[10px] rounded-full bg-secondary" />
+        <BadgeButton className="mb-[87px] md:mb-[50px] w-[211px] h-[62px]">
           Proven Results
-        </div>
+        </BadgeButton>
 
         {/* heading & subheading */}
         <div className="text-center mb-[50px] md:mb-[80px] ">

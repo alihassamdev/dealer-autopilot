@@ -1,5 +1,5 @@
 import AnimatedText from "@/components/ui/AnimatedText";
-import Button from "@/components/ui/Button";
+import Button from "@/components/ui/BadgeButton";
 
 const Hero = () => {
   return (
@@ -22,7 +22,7 @@ const Hero = () => {
         </div>
 
         {/* Call to Action */}
-        <Button className="w-[198px] h-[36px] md:w-[224px] md:h-[42px] shadow-[0px_5px_50px_-12px_#053556]">
+        <Button className="w-[198px] h-6 md:w-56 md:h-[42px]">
           Real-Time Automotive AI
         </Button>
       </div>

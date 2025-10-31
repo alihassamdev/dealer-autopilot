@@ -1,7 +1,6 @@
 import React, { FC } from "react";
 import { twMerge } from "tailwind-merge";
 
-import { FillArrow } from "@/ui/icons";
 import Spinner from "./Spinner";
 
 interface ButtonPropTypes {
@@ -11,19 +10,17 @@ interface ButtonPropTypes {
   onClick?: () => void;
   isLoading?: boolean;
   disabled?: boolean;
-  hasIcon?: boolean;
-  loadingText?: string;
+  dotColor?: string;
 }
 
-const Button: FC<ButtonPropTypes> = (props) => {
+const BadgeButton: FC<ButtonPropTypes> = (props) => {
   const {
     className,
     children,
     onClick,
     isLoading = false,
     disabled = false,
-    hasIcon = true,
-    loadingText = "Loading...",
+    dotColor = "bg-secondary",
   } = props;
 
   const isDisabled = isLoading || disabled;
@@ -31,7 +28,7 @@ const Button: FC<ButtonPropTypes> = (props) => {
   return (
     <button
       className={twMerge(
-        "flex items-center justify-center gap-3 cursor-pointer h-[50px] w-[175px] md:w-[191px] py-2.5 px-[15px] rounded-[12px] bg-secondary hover:bg-primary text-off-white text-[14px] leading-[18px] md:text-[16px] font-medium md:leading-0 transition-opacity",
+        "bg-primary hover:bg-primary cursor-pointer flex h-[62px] w-[211px] gap-[10px] px-[10px] py-[16px] items-center justify-center rounded-[12px] tracking-[0.3%] text-[12px] leading-[16px] md:text-[14px] md:leading-[22px] text-off-white transition-opacity font-bold shadow-[0px_5px_50px_-12px_#053556]",
         isDisabled && "cursor-not-allowed opacity-50",
         className
       )}
@@ -39,22 +36,23 @@ const Button: FC<ButtonPropTypes> = (props) => {
       disabled={isDisabled}
     >
       {isLoading ? (
-        loadingText ? (
-          <div className="flex items-center gap-2">
-            <Spinner className="h-4 w-4" />
-            <span>{loadingText}</span>
-          </div>
-        ) : (
+        <div className="flex items-center gap-2">
           <Spinner className="h-4 w-4" />
-        )
+          <span>Loading...</span>
+        </div>
       ) : (
         <>
+          <div
+            className={twMerge(
+              "shrink-0 w-[10px] h-[10px] rounded-full",
+              dotColor
+            )}
+          />
           {children}
-          {hasIcon && <FillArrow />}
         </>
       )}
     </button>
   );
 };
 
-export default Button;
+export default BadgeButton;

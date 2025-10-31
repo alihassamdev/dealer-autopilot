@@ -10,6 +10,7 @@ import ScrollFillText from "@/components/ui/ScrollFillText";
 import dotGrid from "@/public/images/pain-points/dot-grid.png";
 import borderDesktop from "@/public/images/pain-points/border-image-desktop.png";
 import borderMobile from "@/public/images/pain-points/border-image-mobile.png";
+import BadgeButton from "@/components/ui/BadgeButton";
 
 export const RealityOfDealership = () => {
   return (
@@ -26,11 +27,9 @@ export const RealityOfDealership = () => {
 
       <div className="relative px-6 pt-[138px] md:pt-[110px]">
         <div className="max-w-[1240px] mx-auto flex flex-col items-center">
-          {/* caption / pill */}
-          <div className="shadow-md mb-20 md:mb-[50px] bg-primary flex w-[287px] h-14 md:w-[318px] md:h-[62px] gap-2.5 px-10 py-5 items-center justify-center rounded-[12px] tracking-[0.3%] text-[12px] leading-4 md:text-[14px] md:leading-[22px] text-off-white transition-opacity font-bold shadow-[0px_5px_50px_-12px_#053556]">
-            <div className="shrink-0 w-2.5 h-2.5 rounded-full bg-secondary" />
+          <BadgeButton className="shadow-md mb-20 md:mb-[50px] w-[287px] h-14 md:w-[318px] md:h-[62px]">
             The Reality Of The Dealership
-          </div>
+          </BadgeButton>
 
           {/* heading & subheading */}
           <div className="text-center mb-[55px] md:mb-[100px] ">

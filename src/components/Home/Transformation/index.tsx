@@ -6,6 +6,8 @@ import Text from "@/components/ui/Text";
 import dotsGrid from "@/public/images/transformation/dots-grid.svg";
 
 import ContactUS from "../ContactUs";
+import Button from "@/components/ui/Button";
+import BadgeButton from "@/components/ui/BadgeButton";
 
 const Transformation = () => {
   const leftData = {
@@ -48,11 +50,9 @@ const Transformation = () => {
       {/* Transformation */}
       <div className="px-6 ">
         <div className="w-full max-w-[1240px] mx-auto relative z-20 flex flex-col items-center">
-          {/* caption / pill */}
-          <div className="mb-[25px] md:mb-[32px] bg-[#042A45]  flex w-[224px] h-[56px]  md:w-[245px] md:h-[62px]  gap-[10px] px-[40px] py-[20px] items-center justify-center rounded-[12px] tracking-[0.3%] text-[12px] leading-[16px] md:text-[14px] md:leading-[22px] text-off-white transition-opacity font-bold shadow-[0px_5px_50px_-12px_#053556]">
-            <div className="shrink-0 w-[10px] h-[10px] rounded-full bg-secondary" />
+          <BadgeButton className="mb-[25px] md:mb-[32px] bg-[#042A45] hover:bg-[#042A45] w-[224px] h-[56px]  md:w-[245px] md:h-[62px]">
             The Transformation
-          </div>
+          </BadgeButton>
 
           {/* heading */}
           <Text
@@ -136,19 +136,7 @@ const Transformation = () => {
         </Text>
 
         {/* Button */}
-        <button
-          className="
-                              flex items-center justify-center gap-3 cursor-pointer
-                              h-[50px] w-[175px] md:w-[191px] py-2.5 px-[15px]
-                              rounded-[12px]
-                              bg-secondary hover:bg-primary
-                              text-off-white text-[14px] leading-[18px] md:text-[16px] font-medium md:leading-0
-                              transition-opacity mx-auto
-                          "
-        >
-          See It in Action
-          <FillArrow />
-        </button>
+        <Button className="mx-auto">See It in Action</Button>
       </div>
 
       {/* Contact US */}

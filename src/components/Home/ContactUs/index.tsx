@@ -1,6 +1,7 @@
 import Text from "@/components/ui/Text";
 import { FlashIcon, NotesPad, PhoneIcon } from "@/components/ui/icons";
 import ContactForm from "./ContactForm";
+import BadgeButton from "@/components/ui/BadgeButton";
 
 const ContactUS = () => {
   return (
@@ -9,14 +10,13 @@ const ContactUS = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2  gap-y-[66px] md:gap-[100px] items-center">
           {/* LEFT: content */}
           <div className="flex flex-col items-center md:items-start text-center md:text-left  w-full md:max-w-[534px]">
-            {/* caption / pill */}
-            <div
-              className="mb-[59px] md:mb-[30px] bg-secondary  flex w-[172px] h-[56px]  md:w-[184px] md:h-[55px]  gap-[10px] px-[40px] py-[20px] items-center justify-center rounded-[12px] tracking-[0.3%] text-[12px] leading-[16px] md:text-[14px] md:leading-[22px] text-off-white transition-opacity font-bold box-shadow: 0px 5px 50px -12px #05355680;
-"
+            <BadgeButton
+              dotColor="bg-primary"
+              className="mb-[59px] md:mb-[30px] bg-secondary hover:bg-secondary w-[172px] h-[56px]  md:w-[184px] md:h-[55px]"
             >
-              <div className="shrink-0 w-[10px] h-[10px] rounded-full bg-primary" />
               Start Today
-            </div>
+            </BadgeButton>
+
             {/* heading & subheading */}
             <div>
               <Text as="h3" className="text-white mb-[25px]">
