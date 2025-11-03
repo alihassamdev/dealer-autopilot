@@ -5,7 +5,7 @@ import BadgeButton from "@/components/ui/BadgeButton";
 
 const ContactUS = () => {
   return (
-    <section className="w-full pt-[133px] md:pt-[195px] px-6 ">
+    <section className="w-full pt-[88px] md:pt-[195px] px-6 ">
       <div className="w-full max-w-[1240px] mx-auto relative z-20 flex flex-col items-center">
         <div className="grid grid-cols-1 lg:grid-cols-2  gap-y-[66px] md:gap-[100px] items-center">
           {/* LEFT: content */}
