@@ -5,6 +5,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import AOSProvider from "@/providers/AOSProvider";
+import GoogleAnalytics from "@/components/GoogleAnalytics";
 // import SmoothScrollSection from "@/providers/SmoothScrollSection";
 
 const montserrat = Montserrat({
@@ -29,6 +30,7 @@ export default function RootLayout({
       <body
         className={`${montserrat.variable} antialiased relative flex min-h-screen flex-col `}
       >
+        <GoogleAnalytics />
         <AOSProvider>
           {/* <SmoothScrollSection> */}
           <Navbar />
