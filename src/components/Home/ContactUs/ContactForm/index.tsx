@@ -2,7 +2,7 @@ import { PlaneArrow } from "@/components/ui/icons";
 
 const ContactForm = () => {
   return (
-    <div className="w-full">
+    <div className="w-full max-w-[502px]">
       <form className="bg-white rounded-[16px] p-8 md:p-8 shadow-[0px_25px_50px_-12px_#00000040] text-[#0b2430]">
         <div className="grid grid-cols-1 gap-5 md:gap-6">
           <label className="text-[12px] leading-[16px] md:text-[14px] md:leading-[22px] tracking-[0.3%]">
@@ -62,7 +62,7 @@ const ContactForm = () => {
               <PlaneArrow />
             </button>
 
-            <p className="mt-[20px] md:mt-6 text-charcoal-grey/60 text-center  text-[12px] leading-[16px] font-bold  md:text-[14px] md:leading-[22px] tracking-[0.3%]">
+            <p className="mt-[20px] md:mt-6 text-[#41414299] text-center  text-[12px] leading-[16px] font-bold  md:text-[14px] md:leading-[22px] tracking-[0.3%]">
               * Required fields. We will contact you within 24 hours.
             </p>
           </div>

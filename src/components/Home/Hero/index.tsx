@@ -17,7 +17,7 @@ const Hero = () => {
             ]}
             direction="top"
             delay={0.2}
-            className="tracking-[-0.8%] text-[40px] leading-12 md:tracking-[-1.2%] md:text-[64px] md:leading-[70px] font-bold"
+            className="tracking-[-0.8%] capitalize text-[40px] leading-12 md:tracking-[-1.2%] md:text-[60px] md:leading-[70px] font-bold"
           />
         </div>
 

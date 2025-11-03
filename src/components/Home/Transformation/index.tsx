@@ -76,7 +76,7 @@ const Transformation = () => {
                   >
                     Without Dealer AutoPilot
                   </Text>
-                  <Text className=" text-off-white text-center lg:text-left">
+                  <Text className=" text-[#C4C4C4] text-center lg:text-left">
                     Traditional manual operation
                   </Text>
                 </div>
@@ -107,8 +107,8 @@ const Transformation = () => {
                   >
                     Without Dealer AutoPilot
                   </Text>
-                  <Text className=" text-off-white text-center lg:text-left">
-                    Traditional manual operation
+                  <Text className=" text-[#ECECEC] text-center lg:text-left">
+                    Traditional smart operation
                   </Text>
                 </div>
               </div>
@@ -132,7 +132,7 @@ const Transformation = () => {
           as="h4"
           className="text-off-white text-center mb-[36px] md:mb-[34px] font-bold"
         >
-          The difference is clear. The decision is easy.
+          The difference is clear the decision is easy
         </Text>
 
         {/* Button */}

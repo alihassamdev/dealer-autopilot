@@ -28,7 +28,7 @@ const BadgeButton: FC<ButtonPropTypes> = (props) => {
   return (
     <button
       className={twMerge(
-        "bg-primary hover:bg-primary cursor-pointer flex h-[62px] w-[211px] gap-[10px] px-[10px] py-[16px] items-center justify-center rounded-[12px] tracking-[0.3%] text-[12px] leading-[16px] md:text-[14px] md:leading-[22px] text-off-white transition-opacity font-bold shadow-[0px_5px_50px_-12px_#053556]",
+        "bg-primary cursor-pointer flex rounded-tr-none rounded-bl-none  h-[62px] w-[211px] gap-[10px] px-[10px] py-[16px] items-center justify-center rounded-tl-[12px] rounded-br-[12px] tracking-[0.3%] text-[12px] leading-[16px] md:text-[14px] md:leading-[22px] text-off-white transition-opacity font-semibold shadow-[0px_5px_50px_-12px_#053556]",
         isDisabled && "cursor-not-allowed opacity-50",
         className
       )}

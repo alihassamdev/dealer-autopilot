@@ -64,7 +64,10 @@ const Benifits = () => {
       <div className="w-full max-w-[1240px] mx-auto relative ">
         {/* heading & subheading */}
         <div className="text-center mb-[62px] md:mb-[108px] ">
-          <Text as="h2" className="text-secondary mb-[18px] md:mb-[15px]">
+          <Text
+            as="h2"
+            className="text-secondary mb-[18px] md:mb-[15px] capitalize"
+          >
             AI + automation + customer satisfaction
           </Text>
           <Text as="h4">

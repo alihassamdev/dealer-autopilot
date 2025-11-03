@@ -220,7 +220,7 @@ export const RealityOfDealership = () => {
 
       <div className="relative px-6 pt-[138px] md:pt-[110px]">
         <div className="max-w-[1240px] mx-auto flex flex-col items-center">
-          <BadgeButton className="shadow-md mb-20 md:mb-[50px] w-[287px] h-14 md:w-[318px] md:h-[62px]">
+          <BadgeButton className="shadow-md mb-20 md:mb-[50px] w-[287px] h-14 md:w-[318px] md:h-[62px] bg-[#05355680]">
             The Reality Of The Dealership
           </BadgeButton>
 
