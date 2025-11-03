@@ -91,7 +91,12 @@ export default function Navbar() {
               {/* Header */}
               <DrawerHeader className="flex flex-row items-center justify-between p-4 shrink-0 pt-[54px] pb-[48px]">
                 <DrawerTitle className="text-xl font-semibold text-charcoal-grey">
-                  Menu
+                  <Image
+                    src={logo}
+                    alt="Dealer AutoPilot Logo"
+                    width={74}
+                    height={55}
+                  />
                 </DrawerTitle>
 
                 <DrawerClose asChild>
