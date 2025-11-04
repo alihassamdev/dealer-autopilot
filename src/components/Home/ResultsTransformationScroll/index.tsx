@@ -9,7 +9,7 @@ export default function ResultsTransformationScroll() {
   return (
     <ReactLenis root>
       <div>
-        <section className="min-h-screen sticky top-0">
+        <section className="min-h-screen relative md:sticky top-0 ">
           <Results />
         </section>
 

@@ -65,7 +65,7 @@ const ScrollFillText = forwardRef<HTMLHeadingElement, ScrollFillTextProps>(
       >
         helps you track, recover, and convert every opportunity
         <br />
-        —before it's too late
+        —before it&apos;s too late
       </h4>
     );
   }

@@ -6,7 +6,7 @@ import Image from "next/image";
 
 import Text from "@/ui/Text";
 import logo from "@/public/images/navbar/logo.svg";
-import { FillArrow, HamburgerMenu } from "@/ui/icons";
+import { HamburgerMenu } from "@/ui/icons";
 import { X } from "lucide-react";
 import {
   Drawer,

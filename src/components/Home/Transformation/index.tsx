@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import { CrossIcon, FillArrow, FillCheck } from "@/components/ui/icons";
+import { CrossIcon, FillCheck } from "@/components/ui/icons";
 import Text from "@/components/ui/Text";
 
 import dotsGrid from "@/public/images/transformation/dots-grid.svg";
