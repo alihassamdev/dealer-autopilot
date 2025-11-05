@@ -106,7 +106,7 @@ const Benifits = () => {
             <div className="absolute right-0 md:right-[102px] bottom-[-61px] md:-bottom-7 z-30 ">
               <div className=" bg-secondary rounded-[10px] px-5 py-[23px] w-40 h-[97px] md:w-[186px] md:h-[107px]">
                 <Text as="h4" className="text-off-white font-bold">
-                  99.9% Uptime
+                  World Class Uptime
                 </Text>
               </div>
             </div>

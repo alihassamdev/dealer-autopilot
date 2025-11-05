@@ -105,7 +105,7 @@ const Transformation = () => {
                     as="h4"
                     className="text-white text-lg text-center lg:text-left"
                   >
-                    Without Dealer AutoPilot
+                    With Dealer AutoPilot
                   </Text>
                   <Text className=" text-[#ECECEC] text-center lg:text-left">
                     Traditional smart operation
