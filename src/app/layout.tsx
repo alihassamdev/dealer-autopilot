@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import "./globals.css";
 
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+// import Navbar from "@/components/Navbar";
+// import Footer from "@/components/Footer";
 import AOSProvider from "@/providers/AOSProvider";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 // import SmoothScrollSection from "@/providers/SmoothScrollSection";
@@ -33,9 +33,9 @@ export default function RootLayout({
         <GoogleAnalytics />
         <AOSProvider>
           {/* <SmoothScrollSection> */}
-          <Navbar />
+          {/* <Navbar /> */}
           <main className="flex-1">{children}</main>
-          <Footer />
+          {/* <Footer /> */}
           {/* </SmoothScrollSection> */}
         </AOSProvider>
       </body>

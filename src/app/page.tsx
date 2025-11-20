@@ -1,15 +1,18 @@
-import Benifits from "@/components/Home/Benefits";
-import Hero from "@/components/Home/Hero";
-import PainPoints from "@/components/Home/PainPoints";
-import ResultsTransformationScroll from "@/components/Home/ResultsTransformationScroll";
+// import Benifits from "@/components/Home/Benefits";
+// import Hero from "@/components/Home/Hero";
+// import PainPoints from "@/components/Home/PainPoints";
+// import ResultsTransformationScroll from "@/components/Home/ResultsTransformationScroll";
+
+import GoBacktoHost from "@/components/Go-to-host";
 
 const Home = () => {
   return (
     <>
-      <Hero />
+      <GoBacktoHost />
+      {/* <Hero />
       <PainPoints />
       <Benifits />
-      <ResultsTransformationScroll />
+      <ResultsTransformationScroll /> */}
     </>
   );
 };
