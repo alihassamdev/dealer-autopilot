@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import { CrossIcon, FillArrow, FillCheck } from "@/components/ui/icons";
+import { CrossIcon, FillCheck } from "@/components/ui/icons";
 import Text from "@/components/ui/Text";
 
 import dotsGrid from "@/public/images/transformation/dots-grid.svg";
@@ -105,7 +105,7 @@ const Transformation = () => {
                     as="h4"
                     className="text-white text-lg text-center lg:text-left"
                   >
-                    Without Dealer AutoPilot
+                    With Dealer AutoPilot
                   </Text>
                   <Text className=" text-[#ECECEC] text-center lg:text-left">
                     Traditional smart operation

@@ -155,3 +155,21 @@ body {
     rgba(0, 0, 0, 0) 100%
   );
 }
+
+/*  Home - Benefits Swiper Slider*/
+.swiper-pagination-bullet {
+  background: transparent !important;
+  border: 1px solid var(--secondary);
+  width: 15px !important;
+  height: 15px !important;
+  opacity: 1;
+}
+
+.swiper-pagination-bullet-active {
+  background: var(--secondary) !important;
+  background: transparent;
+}
+
+.swiper-pagination {
+  bottom: 0 !important;
+}

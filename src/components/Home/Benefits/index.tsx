@@ -1,4 +1,11 @@
+"use client";
+
 import Image from "next/image";
+
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/pagination";
 
 import Text from "@/components/ui/Text";
 import {
@@ -60,7 +67,7 @@ const Benifits = () => {
   ];
 
   return (
-    <section className="pt-[62px] pb-[57px] md:pt-[55px] md:pb-[140px] px-6 ">
+    <section className="pt-[62px] pb-[80px] md:pt-[55px] md:pb-[140px] px-6 ">
       <div className="w-full max-w-[1240px] mx-auto relative ">
         {/* heading & subheading */}
         <div className="text-center mb-[62px] md:mb-[108px] ">
@@ -76,7 +83,7 @@ const Benifits = () => {
           </Text>
         </div>
 
-        <div className="flex flex-col md:flex-row justify-between items-center gap-y-28 gap-x-7">
+        <div className="flex flex-col md:flex-row justify-between items-center gap-y-[134px] md:gap-y-28 md:gap-x-7">
           {/* Left: Image */}
           <div className="w-full md:max-w-[605px] relative">
             <div className="overflow-hidden ">
@@ -99,7 +106,7 @@ const Benifits = () => {
             <div className="absolute right-0 md:right-[102px] bottom-[-61px] md:-bottom-7 z-30 ">
               <div className=" bg-secondary rounded-[10px] px-5 py-[23px] w-40 h-[97px] md:w-[186px] md:h-[107px]">
                 <Text as="h4" className="text-off-white font-bold">
-                  99.9% Uptime
+                  World Class Uptime
                 </Text>
               </div>
             </div>
@@ -117,7 +124,8 @@ const Benifits = () => {
 
           {/* Right: Features */}
           <div className="w-full md:max-w-[607px]">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-[25px] gap-x-[25px]">
+            {/* Desktop grid layout */}
+            <div className="hidden sm:grid grid-cols-1 sm:grid-cols-2 gap-y-[25px] gap-x-[25px]">
               {Features.map((feature, index) => {
                 const IconComponent = feature.Icon;
                 return (
@@ -142,6 +150,36 @@ const Benifits = () => {
                   </div>
                 );
               })}
+            </div>
+
+            {/* Mobile Swiper carousel */}
+            <div className="sm:hidden ">
+              <Swiper
+                modules={[Pagination]}
+                spaceBetween={30}
+                pagination={{ clickable: true }}
+                className="w-full"
+                loop={true}
+              >
+                {Features.map((feature) => {
+                  const IconComponent = feature.Icon;
+                  return (
+                    <SwiperSlide key={feature.id}>
+                      <div className="flex flex-col items-center text-center md:px-4 pb-[60px]">
+                        <div className="mb-3">
+                          <div className="w-10 h-10 rounded-[10px] bg-primary flex items-center justify-center mx-auto">
+                            <IconComponent />
+                          </div>
+                        </div>
+                        <Text as="h4" className="mb-2">
+                          {feature.title}
+                        </Text>
+                        <Text>{feature.description}</Text>
+                      </div>
+                    </SwiperSlide>
+                  );
+                })}
+              </Swiper>
             </div>
           </div>
         </div>

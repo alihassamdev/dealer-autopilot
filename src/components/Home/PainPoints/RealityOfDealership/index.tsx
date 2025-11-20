@@ -243,7 +243,7 @@ export const RealityOfDealership = () => {
               {/* Card 1 */}
               <div
                 ref={card1Ref}
-                className="w-full md:w-[396px] h-auto md:h-[200px] relative flex flex-col md:flex-row gap-2.5 items-center md:items-start justify-center text-center md:text-left p-5 md:px-6 md:py-4"
+                className="w-full md:w-[396px] h-auto md:h-[200px] relative flex flex-col md:flex-row gap-2.5 items-center md:items-start justify-center text-center md:text-left pt-5 pb-[15px] px-[47px] md:px-6 md:py-4  mb-[25px] md:mb-0"
               >
                 {/* Background Image for Desktop */}
                 <Image
@@ -285,7 +285,7 @@ export const RealityOfDealership = () => {
               {/* Card 2 */}
               <div
                 ref={card2Ref}
-                className="w-full md:w-[396px] h-auto md:h-[200px] relative pt-5 pb-[15px] px-[27px] md:pt-2.5 md:px-5 "
+                className="w-full md:w-[396px] h-auto md:h-[200px] relative pt-5 pb-[15px] px-[27px] md:pt-2.5 md:px-5 mb-[25px] md:mb-0"
               >
                 {/* Background Image for Desktop */}
                 <Image

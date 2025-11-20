@@ -45,7 +45,7 @@ const Results = () => {
   ];
 
   return (
-    <section className="pb-[60px]  md:pb-[125px] px-6 ">
+    <section className="pb-[46px]  md:pb-[125px] px-6 ">
       <div className="w-full max-w-[1240px] mx-auto relative flex flex-col items-center ">
         <BadgeButton className="mb-[87px] md:mb-[50px] w-[211px] h-[62px]">
           Proven Results
@@ -53,7 +53,7 @@ const Results = () => {
 
         {/* heading & subheading */}
         <div className="text-center mb-[50px] md:mb-[80px] ">
-          <Text as="h2" className="text-secondary mb-[25px] md:mb-[15px]">
+          <Text as="h3" className="text-secondary mb-[25px] md:mb-[15px]">
             Numbers That Speak for Themselves
           </Text>
           <Text as="h4">
@@ -61,13 +61,13 @@ const Results = () => {
           </Text>
         </div>
 
-        <div className="flex flex-col flex-wrap md:flex-row justify-center gap-y-[25px] gap-x-[25px] mb-[60px] md:mb-[80px]">
+        <div className="flex  flex-wrap flex-row justify-center gap-y-[50px] gap:[16px] md:gap-x-[25px] mb-[83px] md:mb-[80px]">
           {ResultsData.map((result) => {
             const IconComponent = result.Icon;
             return (
               <div
                 key={result.id}
-                className="flex flex-col items-center justify-between text-center w-full md:w-[291px]"
+                className="flex flex-col items-center justify-between text-center w-[165px] md:w-[291px] "
               >
                 {/* Icon */}
                 <div className="shrink-0 mb-[15px]">
