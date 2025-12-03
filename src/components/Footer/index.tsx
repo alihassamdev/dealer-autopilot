@@ -8,8 +8,8 @@ import logo from "@/public/images/footer/white-logo.svg";
 
 const Footer = () => {
   return (
-    <footer className="w-full pt-[23px] pb-[95px] md:pt-[106px] md:pb-[93px] px-6 bg-[#021827] ">
-      <div className="w-full max-w-[1240px] mx-auto">
+    <footer className="w-full pt-[23px] pb-[35px] md:pt-[106px] md:pb-[43px]  bg-[#021827] ">
+      <div className="w-full max-w-[1240px] mx-auto px-6">
         <div className="flex flex-col md:flex-row  md:items-start md:justify-start gap-y-[94px] md:gap-x-[236px]">
           {/* Left: Logo + description */}
           <div className="w-full md:max-w-[397px] flex flex-col items-center md:items-start text-center md:text-left">
@@ -120,6 +120,10 @@ const Footer = () => {
           </Link>
         </div>
       </div>
+      <hr className="md:my-10 my-5" />
+      <Text className="text-white text-center px-5">
+        Dealer AutoPilot is a product of Dealer Structure LLC
+      </Text>
     </footer>
   );
 };

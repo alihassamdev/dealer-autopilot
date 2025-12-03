@@ -12,7 +12,7 @@ const Home = () => {
       <Hero />
       <PainPoints />
       <Benifits />
-      <ResultsTransformationScroll /> 
+      <ResultsTransformationScroll />
     </>
   );
 };

@@ -2,11 +2,11 @@ import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import "./globals.css";
 
-// import Navbar from "@/components/Navbar";
-// import Footer from "@/components/Footer";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 import AOSProvider from "@/providers/AOSProvider";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
-// import SmoothScrollSection from "@/providers/SmoothScrollSection";
+import SmoothScrollSection from "@/providers/SmoothScrollSection";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -32,11 +32,11 @@ export default function RootLayout({
       >
         <GoogleAnalytics />
         <AOSProvider>
-          {/* <SmoothScrollSection> */}
-          {/* <Navbar /> */}
-          <main className="flex-1">{children}</main>
-          {/* <Footer /> */}
-          {/* </SmoothScrollSection> */}
+          <SmoothScrollSection>
+            <Navbar />
+            <main className="flex-1">{children}</main>
+            <Footer />
+          </SmoothScrollSection>
         </AOSProvider>
       </body>
     </html>
