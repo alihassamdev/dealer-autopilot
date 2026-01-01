@@ -1,7 +1,11 @@
 {
   "compilerOptions": {
     "target": "ES2017",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -19,14 +23,30 @@
       }
     ],
     "paths": {
-      "@/*": ["./src/*"],
-      "@/types/*": ["./src/types/*"],
-      "@/utils/*": ["./src/lib/utils/*"],
-      "@/lib/*": ["./src/lib/*"],
-      "@/constants/*": ["./src/lib/constants/*"],
-      "@/ui/*": ["./src/components/ui/*"],
-      "@/providers/*": ["./src/providers/*"],
-      "@/public/*": ["./public/*"]
+      "@/*": [
+        "./src/*"
+      ],
+      "@/types/*": [
+        "./src/types/*"
+      ],
+      "@/utils/*": [
+        "./src/lib/utils/*"
+      ],
+      "@/lib/*": [
+        "./src/lib/*"
+      ],
+      "@/constants/*": [
+        "./src/lib/constants/*"
+      ],
+      "@/ui/*": [
+        "./src/components/ui/*"
+      ],
+      "@/providers/*": [
+        "./src/providers/*"
+      ],
+      "@/public/*": [
+        "./public/*"
+      ]
     }
   },
   "include": [
@@ -37,5 +57,7 @@
     ".next/dev/types/**/*.ts",
     "**/*.mts"
   ],
-  "exclude": ["node_modules"]
+  "exclude": [
+    "node_modules"
+  ]
 }
